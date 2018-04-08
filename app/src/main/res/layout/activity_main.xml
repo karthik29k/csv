@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="recruitment.minnovare.com.minnovare.MainActivity">
+
+    <ImageView
+        android:layout_width="299dp"
+        android:layout_height="145dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/background"
+        tools:layout_editor_absoluteX="144dp" />
+
+    <Button
+        android:id="@+id/importCSV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@drawable/button_oval_shape"
+        android:textColor="@color/white"
+        android:text="@string/import_csv" />
+
+</android.support.design.widget.CoordinatorLayout>

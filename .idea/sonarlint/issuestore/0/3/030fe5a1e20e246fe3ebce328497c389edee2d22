@@ -1,0 +1,8 @@
+
+jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(Ò…ì8Éë³ô©,
+{squid:S1450"ZRemove the "progressBar" field and declare it as a local variable in the relevant methods.(â˜ˆçøÿÿÿÿ8ùÕÇô©,
+xsquid:S1450"WRemove the "listView" field and declare it as a local variable in the relevant methods.(¯¤½ñûÿÿÿÿ8ž£êó©,
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÑÙ•ú8ï×Þõ©,
+€squid:S1450"_Remove the "itemArrayAdapter" field and declare it as a local variable in the relevant methods.(ËÝ’–ýÿÿÿÿ8ù½ïó©,
+ƒsquid:S4087"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(©‡Òñþÿÿÿÿ8Î§•ü©,
+ƒsquid:S4087"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(©‡Òñþÿÿÿÿ8é˜šü©,

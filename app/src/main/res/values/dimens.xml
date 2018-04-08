@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="column_width">16dp</dimen>
+    <dimen name="row_height">8dp</dimen>
+    <dimen name="column_header_height">16dp</dimen>
+    <dimen name="row_header_width">8dp</dimen>
+</resources>
