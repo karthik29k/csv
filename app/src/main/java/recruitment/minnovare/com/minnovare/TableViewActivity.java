@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.opencsv.CSVReader;
 
+import java.io.File;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -102,14 +104,21 @@ public class TableViewActivity extends AppCompatActivity {
 
     private void openImageInFullScreen(String imageName) {
             try {
-               String temp_path = "content:///" +
-                       Environment.getExternalStorageDirectory().getAbsolutePath() + "/" +
-                       Environment.DIRECTORY_PICTURES + "/" + imageName;
-                Uri data = Uri.parse(temp_path);
-                Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                intent.setDataAndType(data, "image/*");
-                startActivity(intent);
+                String path =
+                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/" +
+                                Environment.DIRECTORY_PICTURES + "/" + imageName;
+                File imageFile = new File(path);
+
+                if (Build.VERSION.SDK_INT < 24) {
+                    Uri data = Uri.fromFile(imageFile);
+                    Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
+                    intent.setDataAndType(data, "image/*");
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this,"WIP for Image display in Nougat and above", Toast.LENGTH_LONG ).show();
+                }
             } catch (Exception e) {
                 Toast.makeText(this,imageName +" not found under Pictures", Toast.LENGTH_LONG ).show();
                 e.printStackTrace();
