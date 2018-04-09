@@ -7,23 +7,25 @@
     tools:context="recruitment.minnovare.com.minnovare.MainActivity">
 
     <ImageView
-        android:layout_width="299dp"
-        android:layout_height="145dp"
+        android:layout_width="265dp"
+        android:layout_height="162dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
         android:background="@drawable/background"
-        tools:layout_editor_absoluteX="144dp" />
+        tools:layout_editor_absoluteX="151dp" />
 
     <Button
         android:id="@+id/importCSV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="229dp"
+        android:layout_height="63dp"
         android:layout_gravity="center"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:background="@drawable/button_oval_shape"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:text="@string/import_csv"
         android:textColor="@color/white"
-        android:text="@string/import_csv" />
+        tools:layout_editor_absoluteY="392dp" />
 
 </android.support.design.widget.CoordinatorLayout>

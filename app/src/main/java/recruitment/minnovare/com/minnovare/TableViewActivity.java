@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
@@ -99,16 +100,20 @@ public class TableViewActivity extends AppCompatActivity {
         }
     }
 
-    private void openImageInFullScreen(String path) {
-
-        String formatedImageName = path
-                .replace(" ", "_")
-                .replace("-", "_")
-                .replace(".png", "")
-                .toLowerCase();
-        Intent intent = new Intent(this, FullScreenImageActivity.class);
-        intent.putExtra("image", formatedImageName);
-        startActivity(intent);
+    private void openImageInFullScreen(String imageName) {
+            try {
+               String temp_path = "content:///" +
+                       Environment.getExternalStorageDirectory().getAbsolutePath() + "/" +
+                       Environment.DIRECTORY_PICTURES + "/" + imageName;
+                Uri data = Uri.parse(temp_path);
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                intent.setDataAndType(data, "image/*");
+                startActivity(intent);
+            } catch (Exception e) {
+                Toast.makeText(this,imageName +" not found under Pictures", Toast.LENGTH_LONG ).show();
+                e.printStackTrace();
+            }
     }
 
     private void readCSV(Uri uri) {
